@@ -13,8 +13,8 @@ const App: React.FC = () => {
   return (
     <Router>
       <React.Suspense fallback={ <SpinLoading className="suspense-spin" style={{ '--size': '48px' }} />}>
-        <div className="app app1">
-          123123
+        <div className="app">
+          <div className="app1">dasdsad</div>
           <Routes>
             <Route path="/" element={<Navigate to="/home" />} />
             <Route path="/home" element={<Home />} />

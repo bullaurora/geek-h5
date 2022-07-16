@@ -12,7 +12,7 @@ module.exports = {
       grid: true,
     },
     // ...
-    "postcss-px-to-viewport": {
+    "postcss-px-to-viewport-8-plugin": {
       // unitToConvert: 'px',
       // viewportWidth: 375,
       unitToConvert: "px", // 要转化的单位
