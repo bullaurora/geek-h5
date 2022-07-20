@@ -1,11 +1,16 @@
 .app {
   height: 100%;
+  .adm-list-default {
+    border: none;
+    font-size: 16px;
+  }
+  .adm-nav-bar-title {
+    font-size: 17px;
+  }
+  .adm-nav-bar-back-arrow {
+    font-size: 17px;
+  }
 }
 .suspense-spin {
   margin: 200px auto;
-}
-.app1 {
-  font-size:20px ;
-  background-color: pink;
-  color:red;
 }
