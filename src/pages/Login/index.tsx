@@ -4,7 +4,7 @@ import { Button, NavBar, Form, Input, Toast } from "antd-mobile"
 import { InputRef } from "antd-mobile/es/components/input"
 import { AxiosError } from "axios"
 import { useEffect, useRef, useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 
 import styles from "./index.module.scss"
 export interface LoginForm {
@@ -15,6 +15,7 @@ const Login: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState(0)
   const mobileRef = useRef<InputRef>(null)
   const timeRef = useRef(-1)
+  const location = useLocation()
   const dispatch = useMyDispatch()
   const navigate = useNavigate()
   const [form] = Form.useForm()
@@ -26,7 +27,8 @@ const Login: React.FC = () => {
         content: "登陆成功",
         duration: 50,
         afterClose: () => {
-          navigate("/home", { replace: true })
+          const state = location.state as { from: string }
+          navigate(state?.from ||'/home', { replace: true })
         },
       })
     } catch (e) {
@@ -69,7 +71,7 @@ const Login: React.FC = () => {
           form={form}
           validateTrigger={["onBlur", "onChange"]}
           onFinish={onFinish}
-          initialValues={{ mobile: "13911112222",code:'246810'}}
+          initialValues={{ mobile: "13911112222", code: "246810" }}
         >
           <Form.Item
             className="login-item"
@@ -137,5 +139,6 @@ const Login: React.FC = () => {
     </div>
   )
 }
+
 
 export default Login

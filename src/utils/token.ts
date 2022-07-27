@@ -12,4 +12,4 @@ export const setToken = (token:Token)=>localStorage.setItem(GEEK_TOKEN_KEY ,JSON
 export const clearToken = ()=>localStorage.removeItem(GEEK_TOKEN_KEY )
 
 //是否登陆
-export const isAuth = ()=>!!getToken()
+export const isAuth = ()=>!!getToken().token

@@ -16,7 +16,7 @@ type Props = {
   onUpdateProfile: (type: 'gender' | 'photo', value: string) => void
 }
 
-const EditList = ({ onClose, type, onUpdateProfile }: Props) => {
+const EditList: React.FC<Props>= ({ onClose, type, onUpdateProfile }) => {
   const onItemClick = (value: string) => {
     if (type === '') return
     onUpdateProfile(type, value)
@@ -34,13 +34,6 @@ const EditList = ({ onClose, type, onUpdateProfile }: Props) => {
           {item.text}
         </div>
       ))}
-      {/* <div className="list-item" onClick={() => onItemClick('0')}>
-        男
-      </div>
-      <div className="list-item" onClick={() => onItemClick('1')}>
-        女
-      </div> */}
-
       <div className="list-item" onClick={onClose}>
         取消
       </div>

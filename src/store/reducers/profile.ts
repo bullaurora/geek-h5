@@ -11,5 +11,11 @@ export const profile = (state=initialState,action:profileAction):ProfileType=>{
     if (action.type==='profile/getUserProfile') {
         return {...state,userProfile: action.payload}
     }
+    if (action.type==='profile/update') {
+        return {...state,userProfile: {...state.userProfile,...action.payload}}
+    }
+    if (action.type==='profile/photo') {
+        return {...state,userProfile: {...state.userProfile,photo:action.payload}}
+    }
     return state
 } 

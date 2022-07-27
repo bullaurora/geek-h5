@@ -3,7 +3,7 @@ import { Badge, TabBar } from "antd-mobile"
 import styles from "./index.module.scss"
 import { Icon } from "@/components/Icon"
 const tabs = [
-  { path: "/home/index", icon: "iconbtn_home", text: "首页" },
+  { path: "/home", icon: "iconbtn_home", text: "首页" },
   { path: "/home/qs", icon: "iconbtn_qa", text: "问答" },
   { path: "/home/video", icon: "iconbtn_video", text: "视频" },
   { path: "/home/profile", icon: "iconbtn_mine", text: "我的" },
@@ -14,6 +14,7 @@ const Layout: React.FC = () => {
 
   const changeRoute = (key: string) => {
     navigate(key)
+ 
   }
   return (
     <div className={styles.root}>
